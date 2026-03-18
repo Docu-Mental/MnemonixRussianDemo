@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mnemonix Russian</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #2B4FBF;
+        }
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2B4FBF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        #splash img {
+            width: 180px;
+            height: 180px;
+            border-radius: 32px;
+        }
+        #ComposeTarget {
+            width: 100%;
+            height: 100%;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "@js-joda/core": "https://cdn.jsdelivr.net/npm/@js-joda/core/dist/js-joda.esm.js"
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="splash">
+    <img src="mnemonix_icon_02.png" alt="Mnemonix Russian"/>
+</div>
+<div id="ComposeTarget"></div>
+<script type="module" src="MultiplatformMnemonixRussian-composeApp.mjs"></script>
+<script>
+    window.hideSplash = function() {
+        const splash = document.getElementById('splash');
+        splash.style.transition = 'opacity 0.5s';
+        splash.style.opacity = '0';
+        setTimeout(() => splash.style.display = 'none', 500);
+    }
+</script>
+</body>
+</html>
